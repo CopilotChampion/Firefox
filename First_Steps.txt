@@ -42,5 +42,6 @@ Navigate to about:debugging to load a temporary view of your web page content_sc
 
 Key Note: JSON is text-based data format for use by other scripts to run - simply used for retrieval
   JS is the programming language that actually creates the dynamic webpage
+    Used for programming the behavior of web pages in other words
   
     
