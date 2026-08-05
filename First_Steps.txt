@@ -1,0 +1,47 @@
+Extensions can use common web design protocols such as HTML, CSS, etc.
+    However, the same API's used by Javascript plus some can be used
+    Allows more code effects than a web page across browsers
+
+1. Can be useful for analytics and in-browser features for users
+2. Customization, ofc
+3. Design new browser features and tools such as UI and functionality
+4. Share commonly used features in an organization
+
+  "manifest_version": 3,
+  "name": "Borderify",
+  "version": "1.0",
+All of these keys are the basic information the extension needs and serves as the metadata to be used
+
+Next should be a section for the add-on description:
+    for firefox: "about:add-on" then the description
+
+    "browser_specific_settings": {
+    "gecko": {
+      "id": "borderify@mozilla.org",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+This section is for the specific browser, and for firefox and others, gives details that in this example firefox will need such as configuration info about the extension
+    Requires an unique id, whether the extension collects data through data_collection_permissions, etc.
+
+"content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["borderify.js"]
+    }
+  ]
+
+All before this have been giving info about the extension
+    Next is the functionality of the extension, such as loading content_scripts into the web page matching the url pattern
+    Can be used with wildcards to translate to many domains in this example anything with mozille.org
+    
+
+Navigate to about:debugging to load a temporary view of your web page content_scripts
+
+Key Note: JSON is text-based data format for use by other scripts to run - simply used for retrieval
+  JS is the programming language that actually creates the dynamic webpage
+    Used for programming the behavior of web pages in other words
+  
+    
